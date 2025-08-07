@@ -1,34 +1,26 @@
--- v_sales_summary
+-- v_orders_summary
 -- Combines order info, payment, review, and delivery timelines
-
-CREATE VIEW v_sales_summary AS
+CREATE OR REPLACE VIEW v_orders_summary AS
 SELECT
   o.order_id,
-  o.order_status,
+  o.customer_id,
   o.order_purchase_timestamp,
-  o.order_approved_at,
-  o.order_delivered_carrier_date,
-  o.order_delivered_customer_date,
-  o.order_estimated_delivery_date,
-  SUM(oi.price) AS price,
-  SUM(oi.freight_value) AS freight_value,
-  SUM(p.payment_value) AS payment_value,
-  r.review_score,
-  DATE_PART('day', CAST(o.order_delivered_customer_date AS timestamp) - CAST(o.order_purchase_timestamp AS timestamp)) AS delivery_days,
-  DATE_PART('day', CAST(o.order_delivered_carrier_date AS timestamp) - CAST(o.order_approved_at AS timestamp)) AS shipping_days
+  DATE(o.order_purchase_timestamp) AS order_date, 
+  ct.product_category_name_english AS product_category,
+  oi.price,
+  oi.freight_value,
+  pay.payment_type,
+  pay.payment_installments,
+  pay.payment_value
+
 FROM orders o
-LEFT JOIN order_items oi ON o.order_id = oi.order_id
-LEFT JOIN payments p ON o.order_id = p.order_id
-LEFT JOIN v_reviews_cleaned r ON o.order_id = r.order_id
-GROUP BY 
-  o.order_id,
-  o.order_status,
-  o.order_purchase_timestamp,
-  o.order_approved_at,
-  o.order_delivered_carrier_date,
-  o.order_delivered_customer_date,
-  o.order_estimated_delivery_date,
-  r.review_score;
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id
+LEFT JOIN category_translation ct 
+  ON p.product_category_name = ct.product_category_name
+LEFT JOIN payments pay 
+  ON o.order_id = pay.order_id;
+
 
 
 
