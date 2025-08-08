@@ -1,4 +1,5 @@
-Sales Performance Dashboard
+**Sales Performance Dashboard**
+
 This project is an end-to-end sales analysis using the Brazilian E-Commerce Public Dataset from Kaggle: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 The goal was to take raw transactional data, clean and model it using Python and SQL, and then build an interactive Power BI dashboard that delivers clear, business-ready insights.
 
