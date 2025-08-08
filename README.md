@@ -47,7 +47,7 @@ v_seller_performance – Seller-level performance metrics.
 
 - São Paulo contributes over 20% of total revenue, indicating market concentration.
 - Credit cards dominate payment methods, opening opportunities for alternative payment promotions.
-- Health & Beauty is the highest revenue category—ideal for targeted campaigns.
+- Health & Beauty is the highest revenue category, ideal for targeted campaigns.
 - Weekday sales dominate, suggesting workday-driven consumer behavior.
 - Revenue shows consistent growth with identifiable spikes linked to promotions.
 
