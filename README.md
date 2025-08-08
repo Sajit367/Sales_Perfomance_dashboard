@@ -1,10 +1,10 @@
-**Sales Performance Dashboard**
+**SALES PERFORMANCE DASHBOARD**
 
 This project is an end-to-end sales analysis using the Brazilian E-Commerce Public Dataset from Kaggle: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 The goal was to take raw transactional data, clean and model it using Python and SQL, and then build an interactive Power BI dashboard that delivers clear, business-ready insights.
 
 
-Folder Structure
+**Folder Structure**
 
 00_Raw Data/         Original CSV files downloaded from Kaggle
 
@@ -17,7 +17,7 @@ Folder Structure
 README.md            Project documentation
 
 
-Process Overview
+**Process Overview**
 
 Data Loading & Preparation (Python) – Loaded all CSV files into PostgreSQL and handled missing values.
 
@@ -26,7 +26,7 @@ Data Cleaning & Modeling (SQL) – Created analytical views for cleaned data and
 Dashboard Creation (Power BI) – Connected to PostgreSQL, built KPIs and visuals, and designed filters.
 
 
-SQL Views Created
+**SQL Views Created**
 
 v_geolocation_cleaned – Standardized city/state names and removed invalid coordinates.
 
@@ -43,7 +43,7 @@ v_category_sales – Revenue aggregated by product category.
 v_seller_performance – Seller-level performance metrics.
 
 
-Key Insights
+**Key Insights**
 
 - São Paulo contributes over 20% of total revenue, indicating market concentration.
 - Credit cards dominate payment methods, opening opportunities for alternative payment promotions.
@@ -51,7 +51,7 @@ Key Insights
 - Weekday sales dominate, suggesting workday-driven consumer behavior.
 - Revenue shows consistent growth with identifiable spikes linked to promotions.
 
-Dashboard Overview
+**Dashboard Overview**
 
 KPI Cards:
 • Total Revenue: R$ 16.01M
